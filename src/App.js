@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MovieList from "./components/MovieList";
+import Add from "./components/Add";
+import Filter from "./components/Filter";
+import Navbar from "./components/Navbar";
+import MovieData from "./components/MovieData";
 
 function App() {
+  const [movieList, setMovieList] = useState(MovieData);
+  const [searchTitle, setSearchTitle] = useState("");
+  const [searchRating, setSearchRating] = useState("");
+
+  const handleSubmit = (newMovie) => {
+    setMovieList([...movieList, newMovie]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Filter
+        setSearchTitle={setSearchTitle}
+        setSearchRating={setSearchRating}
+      />
+      <MovieList movielist={movieList} setSearchTitle={setSearchTitle} />
+      <Add handleSubmit={handleSubmit} />
     </div>
   );
 }
