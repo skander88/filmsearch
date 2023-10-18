@@ -3,15 +3,15 @@ import MovieCard from "./MovieCards";
 
 export default function MovieList({ movielist, searchTitle, searchRating }) {
   return (
-    <div>
+    <div className="bodyy">
       <div className="movieListContainer">
         {movielist
-          .filter(
+          /*  .filter(
             (el) =>
               el.Title.toLowerCase().includes(
                 searchTitle.toLowerCase().trim()
               ) && el.Rating >= searchRating
-          )
+          )*/
           .map((el, key) => (
             <MovieCard key={el.id} movie={el} />
           ))}

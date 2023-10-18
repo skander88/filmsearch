@@ -40,6 +40,21 @@
   display: flex;
   justify-content: space-between;
 }
-body{
-  background-color: black;
+.bodyy{
+  background-color: rgb(14, 13, 13);
+  
+}
+.movieListContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.form{
+  background-color: #0c0e10;
+}
+.h11{
+  color: red;
+}
+.image{
+  width: 30px;
+  height: 360px;
 }

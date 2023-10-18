@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Add({ handleSubmit }) {
@@ -12,9 +13,11 @@ export default function Add({ handleSubmit }) {
     <div>
       <div className="form">
         <div className="Add">
-          <h1>Add Movies</h1>
+          <h1 className="h11">Add Movies</h1>
         </div>
-        <div className="subtitle">Let's add new movies!</div>
+        <div className="subtitle" className="h11">
+          Let's add new movies!
+        </div>
         <div className="input-container ic1">
           <input
             id="Title"
