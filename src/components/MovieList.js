@@ -1,13 +1,20 @@
 import React from "react";
 import MovieCard from "./MovieCards";
 
-export default function MovieList({ movielist, setSearchTitle }) {
+export default function MovieList({ movielist, searchTitle, searchRating }) {
   return (
     <div>
       <div className="movieListContainer">
-        {movielist.map((el, key) => (
-          <MovieCard key={el.id} movie={el} />
-        ))}
+        {movielist
+          .filter(
+            (el) =>
+              el.Title.toLowerCase().includes(
+                searchTitle.toLowerCase().trim()
+              ) && el.Rating >= searchRating
+          )
+          .map((el, key) => (
+            <MovieCard key={el.id} movie={el} />
+          ))}
       </div>
     </div>
   );

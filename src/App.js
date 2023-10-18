@@ -22,7 +22,11 @@ function App() {
         setSearchTitle={setSearchTitle}
         setSearchRating={setSearchRating}
       />
-      <MovieList movielist={movieList} setSearchTitle={setSearchTitle} />
+      <MovieList
+        movielist={movieList}
+        searchTitle={setSearchTitle}
+        searchRating={setSearchRating}
+      />
       <Add handleSubmit={handleSubmit} />
     </div>
   );
